@@ -8,19 +8,21 @@ const TodoInput = () => {
     const [open , setOpen] = useState(false);
     //버튼 클릭 이벤트
     const onToggle = e => {
-        setOpen(!true);
+        setOpen(!open);
     };
 
     return (
         <>
-            {open && <div className='form-wrapper'>
-                <form className='insert-form'>
-                    <input
-                        type='text'
-                        placeholder='할 일을 입력 후, 엔터를 누르세요!'
-                    />
-                </form>
-            </div>}
+            {
+                open && (<div className='form-wrapper'>
+                    <form className='insert-form'>
+                        <input
+                            type='text'
+                            placeholder='할 일을 입력 후, 엔터를 누르세요!'
+                        />
+                    </form>
+                </div>)
+            }
 
             {/*
                 cn() : 첫번째 파라미터는 항상 유지할 클래스

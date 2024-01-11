@@ -36,9 +36,10 @@ const TodoTemplate = () => {
         console.log('todoText: ', todoText);
 
         const makeNewId = () => {
-          if (todoList.length === 0) return 1;
-          return todoList[todoList.length - 1].id + 1;
+            if (todoList.length === 0) return 1;
+            return todoList[todoList.length - 1].id + 1;
         };
+
         const newTodo = {
             id: makeNewId(),
             title: todoText,
@@ -59,10 +60,17 @@ const TodoTemplate = () => {
     };
 
 
+    // 할 일 삭제 처리 함수
+    const removeTodo = id => {
+        // console.log('id:', id);
+        setTodoList(todoList.filter(todo => todo.id !== id));
+    };
+
+
     return (
         <div className='TodoTemplate'>
             <TodoHeader />
-            <TodoMain todoList={todoList} />
+            <TodoMain todoList={todoList} onRemove={removeTodo} />
             <TodoInput onAdd={addTodo} />
         </div>
     );

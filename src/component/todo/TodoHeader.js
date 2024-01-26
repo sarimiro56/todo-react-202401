@@ -23,18 +23,16 @@ const TodoHeader = ({count, onPromote}) => {
 
     // 등급 뱃지를 조건부 렌더링하는 함수
     const renderGradeBadge = () => {
+        console.log('ddd')
         const role = getCurrentLoginUser().role;
 
         switch (role) {
             case 'COMMON':
                 return (<span className='promote badge bg-warning' onClick={upgradeHandler}>일반회원</span>);
-                break;
             case 'PREMIUM':
                 return (<span className='promote badge bg-danger' onClick={upgradeHandler}>프리미엄</span>);
-                break;
             case 'ADMIN':
                 return (<span className='promote badge bg-dark'>관리자</span>);
-                break;
         }
     };
 
@@ -45,6 +43,8 @@ const TodoHeader = ({count, onPromote}) => {
             <div className='tasks-left'>할 일 {count}개 남음</div>
 
             { renderGradeBadge() }
+
+
 
         </header>
     );

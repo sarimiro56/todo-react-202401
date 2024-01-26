@@ -11,6 +11,7 @@ header {
     font-size: 36px;
     color: $my-dark-gray;
   }
+
   .day {
     margin-top: 4px;
     color: #868e96;
@@ -22,4 +23,23 @@ header {
     margin-top: 40px;
     font-weight: 700;
   }
+  .promote {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 20px;
+    top: 50px;
+    width: 150px;
+    height: 40px;
+    font-size: 1.2em;
+    font-weight: 700;
+    &.bg-warning {
+      cursor: pointer;
+    }
+  }
+
 }
+
+
+

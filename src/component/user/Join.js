@@ -8,7 +8,7 @@ import {AUTH_URL} from "../../config/host-config";
 import {useNavigate} from "react-router-dom";
 
 import './Join.scss';
-import anonymous from '../../assets/img/anonymous.jpg';
+import anonymous from '../../assets/img/image-add.png';
 
 const Join = () => {
 
@@ -203,9 +203,9 @@ const Join = () => {
     // 회원가입 비동기요청을 서버로 보내는 함수
     const fetchSignUpPost = async () => {
 
-        // JSON 데이터를 formData에 넣기 위한 작업
+        // JSON데이터를 formData에 넣기 위한 작업
         const jsonBlob = new Blob(
-            [JSON.stringify(userValue)],
+            [ JSON.stringify(userValue) ],
             { type: 'application/json' }
         );
 
